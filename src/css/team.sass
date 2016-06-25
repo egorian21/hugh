@@ -1,0 +1,31 @@
+.container
+	+outer-container
+
+	.member
+		+span-columns(3.9)
+		align-content: center
+		text-align: center
+		margin-bottom: 60px
+		
+		@media screen and (max-width: 760px)
+			+span-columns(5.8)
+		
+		a
+			font-size: 16px
+			margin-top: 15px
+			color: $red
+		
+		p
+			font-size: 12px
+			
+	.current
+		+span-columns(12)		
+		.current-icon
+			+span-columns(12)
+			margin: auto
+			
+		.current-name
+			+span-columns(12)
+			
+		.current-bio
+			+span-columns(12)
