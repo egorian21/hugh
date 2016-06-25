@@ -36,3 +36,33 @@ $('.pub').mouseenter(function() {
 $('.pub').mouseleave(function() {
 	$('.pub').addClass('active');
 });
+
+function hide( id ) {
+    var e = document.getElementById( id );
+    e.style.display = 'none';
+}
+function toggle( id ) {
+    var e = document.getElementById( id );
+    if( e.style.display == 'block' )
+        e.style.display = 'none';
+    else
+        e.style.display = 'block';
+}
+
+var lastShown = {};
+function toggleRadio( id, group ) {
+    if( group == null ) group = "";
+    var last = lastShown[ group ];
+    
+    var e = document.getElementById( id );
+    if( e.style.display == 'block' ) {
+        if( last != null ) last.style.display = 'none';
+        e.style.display = 'none';
+        last = null;
+    } else {
+        if( last != null ) last.style.display = 'none';
+        e.style.display = 'block';
+        last = e;
+    }
+    lastShown[ group ] = last;
+}
