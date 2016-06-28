@@ -1,4 +1,4 @@
-pubs = require( "src/data/pubs" )
+pubs = require( "src/content/pubs" )
 
 require( "src/xform/util" )
 require( "src/xform/pub-to-bib" )
@@ -48,9 +48,6 @@ talks = filter( pubs, function( p ) return p.type=="talk" end )
 theses = filter( pubs, function( p ) return isMember( {"phdthesis", "mastersthesis"}, p.type ) end )
 
 jade = [[
-#publications.sections
-    h2 Publications
-    p.binary 111
 .scrolling-content
     .container
         .head

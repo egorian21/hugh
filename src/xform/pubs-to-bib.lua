@@ -1,4 +1,4 @@
-pubs = require( "src/data/pubs" )
+pubs = require( "src/content/pubs" )
 
 require( "src/xform/util" )
 require( "src/xform/pub-to-bib" )

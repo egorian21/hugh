@@ -1,5 +1,6 @@
+team = require( "src/content/team" )
+
 require( "src/xform/util" )
-team = require( "src/data/team" )
 
 function nameCompare( a, b )
     if a.surname == b.surname 
@@ -14,7 +15,9 @@ function memberJade( indent )
         local jade = indent..".member\n"
         jade = jade..indent..string.format("    .intro-face(style='background-image: url(images/photo/%s')\n", p.photo )
         jade = jade..indent..string.format("    a(href='%s') %s %s\n", p.web, p.forename, p.surname)
-        jade = jade..indent.."    p PhD Student\n"
+        jade = jade..indent..string.format("    p %s\n", p.type )
+        jade = jade..indent..string.format("    p %s\n", p.subject or "" )
+        jade = jade..indent..string.format("    p %s\n", p.now or "" )
         return jade
     end
 end
@@ -23,18 +26,14 @@ end
 current = sort( toSeq( team ), nameCompare )
 
 jade = [[
-#team.sections
-    h2 Team
-    p.binary 100
-
-.sub-sections
-    h2 Current Crop
+//- .sub-sections
+//-    h2 Current Crop
 
 .content
     .container]].."\n"..
         table.concat( map( current, memberJade( "        " )))
-    ..[[
 
+old = [[
 .sub-sections
     h2 Onwards and Upwards
 

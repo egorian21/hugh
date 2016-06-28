@@ -54,3 +54,24 @@ function fileExists( name )
    local f = io.open( name, "r" )
    if f ~= nil then io.close( f ) return true else return false end
 end
+
+------------------------------------------------------------------------------
+-- Misc functions
+------------------------------------------------------------------------------
+
+-- Convert a number to a string in a given base
+function numberToString( number, base )
+    local function digit( n ) 
+        if n < 10 
+            then return string.char( 48 + n )
+            else return string.char( 87 + n )
+        end
+    end
+    local s = ""
+    repeat
+        local remainder = number % base
+        s = digit( remainder )..s
+        number = ( number - remainder ) / base
+    until number == 0
+    return s
+end
