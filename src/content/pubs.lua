@@ -168,6 +168,7 @@ local pubs = {
     },
     {
         type = "article",
+        bibtex = "leather_autofeatgen_taco14",
         title = "Automatic Feature Generation for Machine Learning--based Optimising Compilation",
         authors = { "Hugh Leather", "Edwin Bonilla", "Michael O'Boyle" },
         journal = "ACM Trans. Archit. Code Optim.",
@@ -433,7 +434,10 @@ local pubs = {
         authors = { "Hugh Leather" },
         title = "Machine Learning in Compilers",
         school = "School of Informatics, University of Edinburgh",
-        year = "2010"
+        year = "2010",
+        files = {
+            { name = "thesis (pdf)", path="thesis.pdf" }
+        }
     },
     
 	{
