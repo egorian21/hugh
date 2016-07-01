@@ -33,7 +33,7 @@ PUBS=$(patsubst src/%,$(OUT)/%,$(wildcard src/publications/*.pdf))
 # OBJ is the final build outputs
 OBJ=$(OUT)/index.html \
 	$(OUT)/css/style.css \
-	$(OUT)/bibtex.bib
+	$(OUT)/leather.bib
 	
 
 # Targets
@@ -82,7 +82,7 @@ $(BLD)/%: src/content/%
 	$(MKDIRS) $(dir $@)
 	$(CP) $< $@
 
-$(OUT)/bibtex.bib: src/xform/pubs-to-bib.lua src/xform/pub-to-bib.lua src/xform/util.lua src/content/pubs.lua 
+$(OUT)/leather.bib: src/xform/pubs-to-bib.lua src/xform/pub-to-bib.lua src/xform/util.lua src/content/pubs.lua 
 	$(MKDIRS) $(dir $@)
 	$(LUA) $< > $@
 

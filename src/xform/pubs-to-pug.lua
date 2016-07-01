@@ -50,6 +50,8 @@ theses = filter( pubs, function( p ) return isMember( {"phdthesis", "mastersthes
 jade = [[
 .scrolling-content
     .container
+        .head 
+            a( href = 'leather.bib' ) Full BibTex
         .head
             b Papers
 ]]..        table.concat( map( papers, pubToPug( "        " )))..[[
@@ -58,6 +60,10 @@ jade = [[
 ]]..        table.concat( map( theses, pubToPug( "        " )))..[[
         .head
             b Invited Talks
-]]..        table.concat( map( talks, pubToPug( "        " )))
+]]..        table.concat( map( talks, pubToPug( "        " )))..[[
+        .head 
+            a( href = 'leather.bib' ) Full BibTex
+]]
+        
 
 print( jade )
