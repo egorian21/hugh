@@ -21,7 +21,7 @@ function pubToPug( indent )
         jade = jade..indent..string.format("    p %s %s %s %s\n", p.day or "", p.month or "", p.year or "", p.location or "" )
 
 
-        local links = map( p.files or {}, function( f ) return string.format( "<a href='%s'>%s</a>", f.path, f.name ) end )
+        local links = map( p.files or {}, function( f ) return string.format( "<a href='publications/%s'>%s</a>", f.path, f.name ) end )
         if p.abstract then 
             table.insert( links, 1, string.format( [[<a href="javascript:toggleRadio('abs%s')">abstract</a>]], elkey )) 
         end

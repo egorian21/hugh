@@ -4,6 +4,7 @@ SASS=sass
 MKDIRS=mkdir -p
 RM=rm -rf
 LUA=lua
+CP=cp -f
 
 # Directories and files
 # OUT is wehere final outputs will go
@@ -26,6 +27,9 @@ PUGS=\
 	sections.pug \
 	teaching.pug \
 	team.pug
+EXP=$(wildcard ~/Documents/university/expenses)
+EXPENSES=$(patsubst $(EXP)/%/expenses.lua, $(OUT)/expenses/public-%.pdf, $(wildcard $(EXP)/*/expenses.lua))
+PUBS=$(patsubst src/%,$(OUT)/%,$(wildcard src/publications/*.pdf))
 # OBJ is the final build outputs
 OBJ=$(OUT)/index.html \
 	$(OUT)/css/style.css \
@@ -33,13 +37,24 @@ OBJ=$(OUT)/index.html \
 	
 
 # Targets
-run: $(OBJ) $(RES)
-
+run: $(OBJ) $(RES) expenses $(EXPENSES) $(PUBS)
+	
 clean:
 	$(RM) $(OUT)
 	$(RM) $(BLD)
-	
-$(OUT)/index.html: $(patsubst %,$(BLD)/%,$(PUGS))
+
+expenses: 
+	$(MKDIRS) $(OUT)/expenses
+	$(MAKE) -C $(EXP) 
+
+$(BLD)/joined-expenses.html: $(EXP)/joined-expenses.html
+	$(CP) $(EXP)/$(@F) $@
+
+$(OUT)/expenses/public-%.pdf: $(EXP)/%/public.pdf
+	$(MKDIRS) $(OUT)/expenses
+	$(CP) $< $@
+
+$(OUT)/index.html: $(patsubst %,$(BLD)/%,$(PUGS)) $(BLD)/joined-expenses.html
 	$(MKDIRS) $(dir $@)
 	$(PUG) --basedir $(BLD) --path ignored < $(BLD)/index.pug > $@ || ( $(RM) $@; exit 1 )
 
@@ -65,7 +80,7 @@ $(BLD)/sections.pug: src/xform/sections-to-pug.lua src/xform/util.lua src/conten
 
 $(BLD)/%: src/content/%
 	$(MKDIRS) $(dir $@)
-	cp -f $< $@
+	$(CP) $< $@
 
 $(OUT)/bibtex.bib: src/xform/pubs-to-bib.lua src/xform/pub-to-bib.lua src/xform/util.lua src/content/pubs.lua 
 	$(MKDIRS) $(dir $@)
@@ -73,4 +88,4 @@ $(OUT)/bibtex.bib: src/xform/pubs-to-bib.lua src/xform/pub-to-bib.lua src/xform/
 
 $(OUT)/%: src/%
 	$(MKDIRS) $(dir $@)
-	cp -f $< $@
+	$(CP) $< $@
