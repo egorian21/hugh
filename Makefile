@@ -5,6 +5,7 @@ MKDIRS=mkdir -p
 RM=rm -rf
 LUA=lua
 CP=cp -f
+RSYNC=rsync -e ssh -vrlptz
 
 # Directories and files
 # OUT is wehere final outputs will go
@@ -89,3 +90,6 @@ $(OUT)/leather.bib: src/xform/pubs-to-bib.lua src/xform/pub-to-bib.lua src/xform
 $(OUT)/%: src/%
 	$(MKDIRS) $(dir $@)
 	$(CP) $< $@
+
+upload: run
+	$(RSYNC) $(OUT)/ hleather@staff.ssh.inf.ed.ac.uk:/home/hleather/homepage/
