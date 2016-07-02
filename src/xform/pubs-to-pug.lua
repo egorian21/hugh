@@ -43,12 +43,12 @@ function pubToPug( indent )
     end    
 end
 
-papers = filter( pubs, function( p ) return isMember( {"article", "inproceedings"}, p.type ) end )
+papers = filter( pubs, function( p ) return isMember( {"inbook", "article", "inproceedings"}, p.type ) end )
 talks = filter( pubs, function( p ) return p.type=="talk" end )
 theses = filter( pubs, function( p ) return isMember( {"phdthesis", "mastersthesis"}, p.type ) end )
 
 jade = [[
-.scrolling-content
+.content
     .container
         .head 
             a( href = 'leather.bib' ) Full BibTex

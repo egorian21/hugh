@@ -1,5 +1,51 @@
 local pubs = {
     {
+        type="inproceedings",
+        bibtex="leather_",
+        title="Predicting and Optimizing Image Compression",
+        authors={ "Alexander Murashko", "Hugh Leather", "John Thomson" },
+        booktitle = "Proceedings of the 24th ACM International Conference on Multimedia",
+        series = "MM '16",
+        year = "2016", month="October", day="15",
+        location = "Amsterdam, The Netherlands",
+        publisher = "ACM",
+        address = "New York, NY, USA",
+        abstract = [[
+            Image compression is a core task for mobile devices, social media and cloud storage backend services. Key evaluation criteria
+            for compression are: the quality of the output, the compression ratio achieved and the computational time (and energy)
+            expended. Predicting the effectiveness of standard compressors like libjpeg and WebP on a novel image is challenging, and often
+            leads to non-optimal compression. This paper presents a machine learning-based technique to accurately model the outcome of
+            image compression for arbitrary new images in terms of quality and compression ratio, without requiring significant additional
+            computational time and energy. Using this model, we can actively adapt the aggressiveness of compression on a per image basis
+            to accurately fit user requirements, leading to a more optimal compression.
+        ]]
+    },
+    {
+        type="inbook",
+        bibtex="leather_lambdacalulus_wf16",
+        authors={ "Hugh Leather", "Janne Irgens" },
+        editor="Lindley, Sam and McBride, Conor and Trinder, Phil and Sannella, Don",
+        title="The Lambda Calculus: Practice and Principle ",
+        booktitle="A List of Successes That Can Change the World: Essays Dedicated to Philip Wadler on the Occasion of His 60th Birthday",
+        day="25", month="March", year="2016",
+        publisher="Springer International Publishing",
+        address="Cham",
+        pages="201--206",
+        isbn="978-3-319-30936-1",
+        doi="10.1007/978-3-319-30936-1_11",
+        url="http://dx.doi.org/10.1007/978-3-319-30936-1_11",
+        files = {
+            { name = "paper(pdf)", path = "2016_lambdacalculus_wf.pdf" },
+        },
+        abstract = [[
+            The Lambda Calculus has perplexed students of computer science for millennia, rendering many incapable of understanding even
+            the most basic precepts of functional programming. This paper gently introduces the core concepts to the lay reader, assuming
+            only a minimum of background knowledge in category theory, quantum chromodynamics, and paleomagnetism. In addition, this paper
+            goes on to its main results, showing how the Lambda Calculus can be used to easily prove the termination of Leibniz’ Hailstone
+            numbers for all n > 0, to show that matrix multiplication is possible in linear time, and to guarantee Scottish independence.
+        ]]
+    },    
+    {
         type = "inproceedings",
         title = "Towards Collaborative Performance Tuning of Algorithmic Skeletons",
         bibtex = "leather_collaborativetuningskeletons_adapt2016",
@@ -7,7 +53,33 @@ local pubs = {
         year = "2016",
         month = "January",
         location = "Prague, Czech Republic",
-        booktitle = "Proceedings of the International Workshop on High-Level Programming for Heterogeneous and Hierarchical Parallel Systems (HLPGPU 2016)"
+        booktitle = "Proceedings of the International Workshop on High-Level Programming for Heterogeneous and Hierarchical Parallel Systems (HLPGPU 2016)",
+        files = {
+            { name = "paper(pdf)", path = "2016_collabskeletontuning_hlpgpu.pdf" },
+        },
+        abstract = [[
+            The physical limitations of microprocessor design have forced the industry towards increasingly heterogeneous designs to
+            extract performance. This trend has not been matched with adequate software tools, leading to a growing disparity between the
+            availability of parallelism and the ability for application developers to exploit it. Algorithmic skeletons simplify parallel
+            programming by providing high-level, reusable patterns of computation.
+            
+            Achieving performant skeleton implementations is a difficult task; skeleton authors must attempt to anticipate and tune for a
+            wide range of architectures and use cases. This results in implementations that target the general case and cannot provide the
+            performance advantages that are gained from tuning low level optimization parameters. Autotuning combined with machine learning
+            offers promising performance benefits in these situations, but the high cost of training and lack of available tools limits the
+            practicality of autotuning for real world programming. We believe that performing autotuning at the level of the skeleton
+            library can overcome these issues.
+            
+            In this work, we present OmniTune — an extensible and distributed framework for dynamic autotuning of optimization parameters
+            at runtime. OmniTune uses a client-server model with a flexible API to support machine learning enabled autotuning. Training
+            data is shared across a network of cooperating systems, using a collective approach to performance tuning.
+            
+            We demonstrate the practicality of OmniTune in a case study using the algorithmic skeleton library SkelCL. By automatically
+            tuning the workgroup size of OpenCL Stencil skeleton kernels, we show that that static tuning across a range of GPUs and
+            programs can achieve only 26% of the optimal performance, while OmniTune achieves 92% of this maximum, equating to an average
+            5.65× speedup. OmniTune achieves this without introducing a significant runtime overhead, and enables portable, cross-device
+            and cross-program tuning.
+        ]]    
     },
     {
         type = "inproceedings",
@@ -17,7 +89,48 @@ local pubs = {
         year = "2016",
         month = "January",
         location = "Prague, Czech Republic",
-        booktitle = "Proceedings of the 6th International Workshop on Adaptive Self-tuning Computing Systems (ADAPT 2016)"
+        booktitle = "Proceedings of the 6th International Workshop on Adaptive Self-tuning Computing Systems (ADAPT 2016)",
+        files = {
+            { name = "paper(pdf)", path = "2016_iterativecompilationmobile_adapt.pdf" },
+        },
+        abstract = [[
+            The abundance of poorly optimized mobile applications coupled
+            with their increasing centrality in our digital lives make
+            a framework for mobile app optimization an imperative.
+            While tuning strategies for desktop and server applications
+            have a long history, it is difficult to adapt them for use on
+            mobile devices.
+            
+            Reference inputs which trigger behavior similar to a mobile
+            application’s typical are hard to construct. For many
+            classes of applications the very concept of typical behavior
+            is nonexistent, each user interacting with the application
+            in very different ways. In contexts like this, optimization
+            strategies need to evaluate their effectiveness against real
+            user input, but doing so online runs the risk of user dissatisfaction
+            when suboptimal optimizations are evaluated.
+            
+            In this paper we present an iterative compiler which employs
+            a novel capture and replay technique in order to collect
+            real user test cases and use it later to evaluate different
+            transformations offline. The proposed mechanism identifies
+            and stores only the set of memory pages needed to replay
+            the most heavily used functions of the application. At idle
+            and charging periods, this minimal state is combined with
+            different binaries of the application, each one build with different
+            optimizations enabled. Replaying the targeted functions
+            allows us to evaluate the effectiveness of each set of
+            optimizations for the actual way the user interacts with the
+            application.
+            
+            For the BEEBS benchmark suite, our approach was able
+            to improve performance of hot functions by up to 57%, while
+            keeping the slowdown experienced by the user on average at
+            0.8%. By focusing only on heavily used functions, we are
+            able to conserve storage space by between two and three
+            orders of magnitude compared to typical capture and replay
+            implementations.
+        ]]
     },
     {
         type = "inproceedings",
@@ -27,7 +140,36 @@ local pubs = {
         year = "2016",
         month = "January",
         location = "Prague, Czech Republic",
-        booktitle = "Proceedings of the 6th International Workshop on Adaptive Self-tuning Computing Systems (ADAPT 2016)"
+        booktitle = "Proceedings of the 6th International Workshop on Adaptive Self-tuning Computing Systems (ADAPT 2016)",
+        files = {
+            { name = "paper(pdf)", path = "2016_autotuneopenclstencil_adapt.pdf" },
+        },
+        abstract = [[
+            Selecting an appropriate workgroup size is critical
+            for the performance of OpenCL kernels, and requires
+            knowledge of the underlying hardware, the data being
+            operated on, and the implementation of the kernel.
+            This makes portable performance of OpenCL programs
+            a challenging goal, since simple heuristics and statically
+            chosen values fail to exploit the available performance.
+            To address this, we propose the use of machine learning enabled
+            autotuning to automatically predict workgroup
+            sizes for stencil patterns on CPUs and multi-GPUs.
+            
+            We present three methodologies for predicting workgroup
+            sizes. The first, using classifiers to select the optimal
+            workgroup size. The second and third proposed
+            methodologies employ the novel use of regressors for
+            performing classification by predicting the runtime of
+            kernels and the relative performance of different workgroup
+            sizes, respectively. We evaluate the effectiveness
+            of each technique in an empirical study of 429 combinations
+            of architecture, kernel, and dataset, comparing
+            an average of 629 different workgroup sizes for each. We
+            find that autotuning provides a median 3.79× speedup
+            over the best possible fixed workgroup size, achieving
+            94% of the maximum performance.
+        ]]
     },
     {
         type = "inproceedings",
@@ -37,7 +179,34 @@ local pubs = {
         year = "2016",
         month = "March",
         location = "Saarbrücken, Germany",
-        booktitle = "Proceedings of the 1st IEEE European Symposium on Security and Privacy (EuroS&amp;P 2016)"
+        booktitle = "Proceedings of the 1st IEEE European Symposium on Security and Privacy (EuroS&amp;P 2016)",
+        files = {
+            { name = "paper(pdf)", path = "2016_deanonymise_eurosp.pdf" },
+        },
+        abstract = [[
+            Using the plethora of apps on smartphones and
+            tablets entails giving them access to different types of privacy
+            sensitive information, including the device’s location. This can
+            potentially compromise user privacy when app providers share
+            user data with third parties (e.g., advertisers) for monetization
+            purposes. In this paper, we focus on the interface for data
+            sharing between app providers and third parties, and devise
+            an attack that can break the strongest form of the commonly
+            used anonymization method for protecting the privacy of users.
+            More specifically, we develop a mechanism called Comber
+            that given completely anonymized mobility data (without any
+            pseudonyms) as input is able to identify different users and
+            their respective paths in the data. Comber exploits the observation
+            that the distribution of speeds is typically similar among
+            different users and incorporates a generic, empirically derived
+            histogram of user speeds to identify the users and disentangle
+            their paths. Comber also benefits from two optimizations that
+            allow it to reduce the path inference time for large datasets. We
+            use two real datasets with mobile user location traces (Mobile
+            Data Challenge and GeoLife) for evaluating the effectiveness
+            of Comber and show that it can infer paths with greater than
+            90% accuracy with both these datasets.
+        ]]
     },
     {
         type = "inproceedings",
@@ -436,7 +605,7 @@ local pubs = {
         school = "School of Informatics, University of Edinburgh",
         year = "2010",
         files = {
-            { name = "thesis (pdf)", path="thesis.pdf" }
+            { name = "thesis (pdf)", path="2011_thesis.pdf" }
         }
     },
     
