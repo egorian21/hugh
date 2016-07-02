@@ -64,7 +64,7 @@ local team = {
     },
     
     oergin = {
-        forename = "",
+        forename = "Oğuz",
         surname = "Ergin",
         web = "http://oergin.kasirgalabs.com/?lang=en",
         photo = "oergin.jpeg",
