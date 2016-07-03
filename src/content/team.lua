@@ -74,4 +74,7 @@ local team = {
     }
     
 }
+for k,v in pairs( team ) do
+    v.id = k
+end
 return team

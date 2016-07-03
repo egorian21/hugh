@@ -12,7 +12,7 @@ end
 function memberJade( indent )
     return function( p )
         indent = indent or ""
-        local jade = indent..".member\n"
+        local jade = indent..".member#"..p.id.."\n"
         jade = jade..indent..string.format("    .intro-face(style='background-image: url(images/photo/%s')\n", p.photo )
         jade = jade..indent..string.format("    a(href='%s') %s %s\n", p.web, p.forename, p.surname)
         jade = jade..indent..string.format("    p %s\n", p.type )
