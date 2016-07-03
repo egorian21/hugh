@@ -3,21 +3,22 @@ projects = require( "src/content/projects" )
 require( "src/xform/util" )
 
 local template = [[
-.sub-sections
-    h2 %s
-.content
-    .container
-        %s
+.container
+    .sub-sections
+        h2 %s
+    .content
+        .container
+            %s
         
-%s
+    %s
 
-        %s
+            %s
 ]]
 local function projectToPug( p, i )
     local title = p.title
     if p.acronym then title = p.acronym.." - "..title end
     if p.funder then
-        local fundtmpl = "\n    p Project supported by: <a href='%s'><img src='images/logo/%s' title='%s'/></a>"
+        local fundtmpl = "\n        p Project supported by: <a href='%s'><img src='images/logo/%s' title='%s'/></a>"
         local fund= fundtmpl:format( p.funder.web or "#void", p.funder.logo or "", p.funder.name )
         title = title..fund
     end
