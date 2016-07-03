@@ -150,7 +150,7 @@ local projects = {
         },
     },
     {   -- Stephen Kyle
-        title = "Virtual Machine Optimisation and Testing",
+        title = "Applications of Information Sharing for Code Generation in Process Virtual Machines",
         web = nil,
         funder = arm,
         people = { team.skyle },
