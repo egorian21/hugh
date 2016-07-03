@@ -24,6 +24,7 @@ PUGS=\
 	menu.pug \
 	prospective.pug \
 	pubs.pug \
+	projects.pug \
 	research.pug \
 	sections.pug \
 	teaching.pug \
@@ -68,6 +69,10 @@ $(BLD)/team.pug: src/xform/team-to-pug.lua src/xform/util.lua src/content/team.l
 	$(LUA) $< > $@
 
 $(BLD)/pubs.pug: src/xform/pubs-to-pug.lua src/xform/util.lua src/content/pubs.lua 
+	$(MKDIRS) $(dir $@)
+	$(LUA) $< > $@
+
+$(BLD)/projects.pug: src/xform/projects-to-pug.lua src/xform/util.lua src/content/projects.lua 
 	$(MKDIRS) $(dir $@)
 	$(LUA) $< > $@
 
