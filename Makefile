@@ -19,12 +19,13 @@ PUGS=\
 	awards.pug \
 	compucast.pug \
 	contact.pug \
+	copt.pug \
 	index.pug \
 	intro.pug \
 	menu.pug \
+	projects.pug \
 	prospective.pug \
 	pubs.pug \
-	projects.pug \
 	research.pug \
 	sections.pug \
 	teaching.pug \
@@ -36,6 +37,7 @@ PUBS=$(patsubst src/%,$(OUT)/%,$(wildcard src/publications/*.pdf))
 OBJ=$(OUT)/index.html \
 	$(OUT)/css/style.css \
 	$(OUT)/leather.bib
+COPT=$(wildcard ~/Documents/university/courses/copt)
 	
 
 # Targets
@@ -83,6 +85,10 @@ $(BLD)/menu.pug: src/xform/sections-to-menu-pug.lua src/xform/util.lua src/conte
 $(BLD)/sections.pug: src/xform/sections-to-pug.lua src/xform/util.lua src/content/sections.lua 
 	$(MKDIRS) $(dir $@)
 	$(LUA) $< > $@
+
+$(BLD)/copt.pug: src/xform/copt-to-pug.lua src/xform/util.lua $(COPT)/info.lua
+	$(MKDIRS) $(dir $@)
+	$(LUA) $< $(COPT) > $@
 
 $(BLD)/%: src/content/%
 	$(MKDIRS) $(dir $@)
