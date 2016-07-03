@@ -1,7 +1,7 @@
 local pubs = {
     {
         type="inproceedings",
-        bibtex="leather_",
+        bibtex="leather_imagecompression_mm16",
         title="Predicting and Optimizing Image Compression",
         authors={ "Alexander Murashko", "Hugh Leather", "John Thomson" },
         booktitle = "Proceedings of the 24th ACM International Conference on Multimedia",
