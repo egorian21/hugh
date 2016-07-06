@@ -40,7 +40,7 @@ local template = [[
             th( colspan = 2 ) Lecture Notes
     table.teaching
         tr
-            td %s
+            %s
 ]]
 
 local function timetable()
