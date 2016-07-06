@@ -16,31 +16,34 @@ local template = [[
         optimisations in a research compiler.
 
 %s
-    table.teaching
-        tr
-            th( colspan = 5 ) Timetable Semester %d
-        tr 
-            td( width="80") <b>Day</b>
-            td <b>Start</b>
-            td <b>Finish</b>
-            td <b>Building</b>
-            td <b>Room</b>
-        %s
-    
-    table.teaching
-        tr
-            th( colspan = 2 ) Coursework
-        tr 
-            td <b>Deadline</b>
-            td %s
-        tr 
-            td <b>Feedback</b>
-            td %s
-        tr
-            th( colspan = 2 ) Lecture Notes
-    table.teaching
-        tr
+    div.teaching
+        table
+            tr
+                th( colspan = 5 ) Timetable Semester %d
+            tr 
+                td( width="80") <b>Day</b>
+                td <b>Start</b>
+                td <b>Finish</b>
+                td <b>Building</b>
+                td <b>Room</b>
             %s
+    
+    div.teaching
+        table
+            tr
+                th( colspan = 2 ) Coursework
+            tr 
+                td <b>Deadline</b>
+                td %s
+            tr 
+                td <b>Feedback</b>
+                td %s
+            tr
+                th( colspan = 2 ) Lecture Notes
+    div.teaching
+        table
+            tr
+                %s
 ]]
 
 local function timetable()
@@ -62,11 +65,12 @@ end
 
 local function notice()
     local template = [[
-    table.teaching
-        tr.notice
-            th Notice
-        tr.notice
-            td %s
+    div.teaching
+        table
+            tr.notice
+                th Notice
+            tr.notice
+                td %s
     ]]
     if info.notice and info.notice.web then
         return template:format( info.notice.web )
