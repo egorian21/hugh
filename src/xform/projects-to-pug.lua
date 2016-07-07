@@ -10,7 +10,7 @@ local template = [[
         .container
             %s
         
-    %s
+%s
 
             %s
 ]]
@@ -27,7 +27,7 @@ local function projectToPug( p, i )
         return "<li>"..link
     end
     local people = "<ul>"..table.concat( map( p.people, person ))
-    local body = table.concat( map( p.desc, function( d ) return "        p.\n"..d end ), "\n" )
+    local body = table.concat( map( p.desc, function( d ) return "            p.\n"..d end ), "\n" )
     local site = p.web and string.format( "a( href='%s') Website", p.web ) or ""
     return template:format( title, people, body, site )
 end
