@@ -37,6 +37,16 @@ $('.pub').mouseleave(function() {
 	$('.pub').addClass('active');
 });
 
+function scrollFromMenu( id ) {
+    // Hide the menu
+    $( '.sliding-panel-content,.sliding-panel-fade-screen' ).toggleClass( 'is-visible' );
+    // Scroll to the section - takes 1s
+    $( 'html, body' ).animate( 
+        { scrollTop : $( '#' + id ).offset().top }, 
+        1000
+    )
+}
+
 function hide( id ) {
     var e = document.getElementById( id );
     e.style.display = 'none';
