@@ -10,6 +10,9 @@ local pubs = {
         location = "Amsterdam, The Netherlands",
         publisher = "ACM",
         address = "New York, NY, USA",
+        files = {
+            { name = "paper(pdf)", path = "2016-mlimagecompression-acmmm.pdf" },
+        },
         abstract = [[
             Image compression is a core task for mobile devices, social media and cloud storage backend services. Key evaluation criteria
             for compression are: the quality of the output, the compression ratio achieved and the computational time (and energy)
