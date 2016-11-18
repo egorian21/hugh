@@ -1,9 +1,9 @@
 # Tools
-PUG=pug
-SASS=sass
+PUG=/usr/local/bin/pug
+SASS=/usr/local/bin/sass
 MKDIRS=mkdir -p
 RM=rm -rf
-LUA=lua
+LUA=/opt/local/bin/lua
 CP=cp -f
 RSYNC=rsync -e ssh -vrlptz
 

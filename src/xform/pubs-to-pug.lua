@@ -12,10 +12,10 @@ function pubToPug( indent )
         local jade = indent..".pub.active\n"
         jade = jade..indent..string.format("    b %d %s\n", i, p.title )
 
-        local authors = table.concat( p.authors or {}, ", " )
+        local authors = table.concat( p.authors or p.editors or {}, ", " )
         jade = jade..indent..string.format("    p %s\n", authors )
 
-        local book = (p.booktitle or "").." "..(p.journal or "").." "..(p.volume or "").." "..(p.pages or "").." "..(p.venue or "").." "..(p.school or "")
+        local book = (p.booktitle or "").." "..(p.journal or "").." "..(p.series or "").." "..(p.volume or "").." "..(p.pages or "").." "..(p.venue or "").." "..(p.school or "")
         jade = jade..indent..string.format("    p %s\n", book)
 
         jade = jade..indent..string.format("    p %s %s %s %s\n", p.day or "", p.month or "", p.year or "", p.location or "" )
@@ -43,7 +43,7 @@ function pubToPug( indent )
     end    
 end
 
-papers = filter( pubs, function( p ) return isMember( {"inbook", "article", "inproceedings"}, p.type ) end )
+papers = filter( pubs, function( p ) return isMember( {"inbook", "article", "inproceedings", "proceedings"}, p.type ) end )
 talks = filter( pubs, function( p ) return p.type=="talk" end )
 theses = filter( pubs, function( p ) return isMember( {"phdthesis", "mastersthesis"}, p.type ) end )
 

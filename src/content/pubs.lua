@@ -1,9 +1,38 @@
 local pubs = {
     {
-        type="inproceedings",
-        bibtex="leather_imagecompression_mm16",
-        title="Predicting and Optimizing Image Compression",
-        authors={ "Alexander Murashko", "Hugh Leather", "John Thomson" },
+        type = "inproceedings",
+        bibtex = "leather_dnnprogramgen_cgo17",
+        title = "Synthesizing Benchmarks for Predictive Modeling",
+        authors = { "Chris Cummins", "Pavlos Petoumenos", "Zheng Wang", "Hugh Leather" },
+        booktitle = "Accepted to appear in International Symposium on Code Generation and Optimization (CGO'17)",
+        year = "2017",
+        month = "February",
+        day = "4",
+        location = "Austin, Texas USA"
+    },
+    {
+        type = "inproceedings",
+        bibtex = "leather_minimiseitercomp_cgo17",
+        title = "Minimizing the cost of iterative compilation with active learning",
+        authors = { "William Ogilvie", "Pavlos Petoumenos", "Zheng Wang", "Hugh Leather" },
+        booktitle = "Accepted to appear in International Symposium on Code Generation and Optimization (CGO'17)",
+        year = "2017",
+        month = "February",
+        day = "4",
+        location = "Austin, Texas USA"
+    },
+    {
+        type = "article",
+        bibtex = "leather_alea_taco17",
+        title = "ALEA: A Fine-grained Energy Profiling Tool",
+        authors = { "Lev Mukhanov", "Pavlos Petoumenos", "Zheng Wang", "Nikos Parasyris", "Dimitrios Nikolopoulos", "Bronis de Supinski", "Hugh Leather" },
+        booktitle = "Accepted to appear in to ACM Transactions on Architecture and Code Optimization (TACO)"
+    },
+    {
+        type = "inproceedings",
+        bibtex = "leather_imagecompression_mm16",
+        title = "Predicting and Optimizing Image Compression",
+        authors = { "Alexander Murashko", "Hugh Leather", "John Thomson" },
         booktitle = "Proceedings of the 24th ACM International Conference on Multimedia",
         series = "MM '16",
         year = "2016", month="October", day="15",
@@ -22,6 +51,17 @@ local pubs = {
             computational time and energy. Using this model, we can actively adapt the aggressiveness of compression on a per image basis
             to accurately fit user requirements, leading to a more optimal compression.
         ]]
+    },
+    {
+        type="proceedings",
+        bibtex="leather_parco2016",
+        editors = { "Hugh Leather", "Mark Sawyer", "Mark Parsons", "Gerhard Joubert", "Frans Peters" },
+        month = "April",
+        publisher = "IOS Press",
+        series = "Advances in Parallel Computing",
+        title = "Parallel Computing: Accelerating Computational Science and Engineering (CSE)",
+        volume = "25",
+        year = "2014"
     },
     {
         type="inbook",
@@ -377,6 +417,17 @@ local pubs = {
         ]]
     },
     {
+        type="inproceedings",
+        bibtex="leather_activeheur_pact14",
+        title="Active learning accelerated automatic heuristic construction for parallel program mapping",
+        author={ "William Ogilvie", "Pavlos Petoumenos", "Zheng Wang", "Hugh Leather" },
+        booktitle="Proceedings of the 23rd international conference on Parallel architectures and compilation (PACT'14)",
+        pages="481--482", month="August", day="24",
+        location="Edmonton, Alberta, Canada",
+        year="2014",
+        organization="ACM"
+    },
+    {
         type = "article",
         title = "Auto-tuning Parallel Skeletons",
         bibtex = "leather_autotuneparallelskeletons_ppl12",
@@ -441,6 +492,18 @@ local pubs = {
 
         ]]
     },
+    {
+        type="inproceedings",
+        bibtex="leather_masif_pact12",
+        authors = { "Alexander Collins", "Christian Fensch", "Hugh Leather" },
+        title = "MaSiF: Machine Learning Guided Auto-tuning of Parallel Skeletons",
+        booktitle = "Proceedings of the 21st International Conference on Parallel Architectures and Compilation Techniques (PACT'12)",
+        series = "PACT '12",
+        year = "2012",
+        location = "Minneapolis, Minnesota, USA",
+        pages = "437--438",
+        publisher = "ACM",
+    },    
     {
         type = "inproceedings",
         title = "Optimization Space Exploration of the FastFlow Parallel Skeleton Framework",
@@ -588,7 +651,8 @@ local pubs = {
         bibtex = "leather_evac_lcn07",
 		authors = { "Barnes M", "Leather H", "Arvind D K" },
 		booktitle = "Proceedings of the 32nd IEEE Conference on Local Computer Networks (LCN 2007) - Volume 00",
-		year = "2007",
+		year = "2007", month = "October",
+        location = "Dublin, Ireland",
         files = {
 		    { name = "paper (pdf)", path = "2007_evac_lcn.pdf" },
         },
@@ -600,6 +664,9 @@ local pubs = {
 		]]
     },
 
+    ----------------------------------------------------------------------------
+    -- Theses
+    ----------------------------------------------------------------------------
     {
         type = "phdthesis",
         bibtex = "leather_phdthesis_10",
@@ -612,12 +679,128 @@ local pubs = {
         }
     },
     
-	{
+    ----------------------------------------------------------------------------
+    -- Talks
+    ----------------------------------------------------------------------------
+    {
+        type = "talk",
+        location = "Seoul, South Korea",
+        title = "Program Generation with Deep Learning",
+        year = "2016", month = "September", day = "18",
+        venue = "Seoul National University"
+    },
+    {
+        type = "talk",
+        location = "Manchester, England",
+        title = "Reducing the High Cost of Low Latency",
+        year = "2016", month = "February", day = "1",
+        venue = "ARM Ltd"
+    },
+    {
+        type = "talk",
+        title = "Energy Accounting for Program Optimisation",
+        location = "Lancaster, England",
+        year = "2015", month = "January", day = "28",
+        venue = "Lancaster University"
+    },
+    {
+        type = "talk",
+        title = "Measuring QoE of Interactive Workloads",
+        location = "Hillsboro, Oregan, USA",
+        year = "2014", month = "September", day = "15",
+        venue = "Intel Corporation"
+    },
+    {
+        type = "talk",
+        title = "Fast Automatic Heuristic Construction",
+        location = "Raleigh, North Carolina, USA",
+        year = "2014", month = "October", day = "12",
+        venue = "Iiswc"
+    },
+    {
+        type = "talk",
+        title = "Active learning accelerated automatic heuristic construction",
+        location = "Edmonton, Alberta, Canada",
+        year = "2014", month = "August", day = "24",
+        venue = "Pact"
+    },
+    {
+        type = "talk",
+        location = "Edinburgh, Scotland",
+        title = "Automatic Feature Generation for Machine Learning Based Optimizing Compilation",
+        year = "2014", month = "February", day = "26",
+        venue = "Compusoc"
+    },
+    {
+        type = "talk",
+        location = "Beijing, China",
+        title = "Machine Learning in Compilers",
+        year = "2013", month = "November", day = "23",
+        venue = "Peking University"
+    },
+    {
+        type = "talk",
+        location = "San Jose, California, USA",
+        title = "Mobile System Optimisation",
+        year = "2013", month = "August", day = "18",
+        venue = "Qualcomm Ltd"
+    },
+    {
+        type = "talk",
+        location = "East Kilbride, Scotland",
+        title = "Operating System Optimisation",
+        year = "2013", month = "March", day = "24",
+        venue = "Freescale Ltd"
+    },
+    {
+        type = "talk",
+        location = "Beijing, China",
+        title = "Machine Learning in Compilers",
+        year = "2013", month = "March", day = "13",
+        venue = "Beihang University"
+    },
+    {
+        type = "talk",
+        title = "Accelerating Programs with Iterative Compilation",
+        location = "Beijing, China",
+        year = "2013", month = "March", day = "12",
+        venue = "Baidu Ltd"
+    },
+    {
+        type = "talk",
+        title = "Optimising Compilers with Machine Learning",
+        location = "Hong Kong, China",
+        year = "2013", month = "March", day = "07",
+        venue = "Hong Kong University of Science and Technology (HKUST)"
+    },
+    {
+        type = "talk",
+        title = "Mobile Device Optimisation with Machine Learning",
+        location = "Edinburgh Scotland",
+        year = "2013", month = "February", day = "08",
+        venue = "SCONE (SCOttish Networking Event)"
+    },
+    {
+        type = "talk",
+        title = "Machine Learning Compilers and Mobile Systems",
+        location = "St Andrews, Scotland",
+        year = "201", month = "April", day = "11",
+        venue = "University of St Andrews"
+    },
+    {
+        type = "talk",
+        title = "Optimising the Mobile Net",
+        location = "Cambridge, England",
+        year = "2012", month = "September", day = "17",
+        venue = "ARM Ltd"
+    },	
+    {
         type = "talk",
         title = "How to Give a Research Presentation",
 	    location = "Glasgow, Scotland",
 	    year = "2012", month = "June", day = "21",
 		venue = "SICSA Conference 2012",
+        notes= "After the previous, good reception of my talk at the 2011 SICSA conference, I have been asked to reprise the rôle at this year's conference, providing advice on how to present research at conferences.",
         files = {
 		    { name = "slides (open office)", path = "2012_how-to-do-a-conference-presentation-sicsa.odp" },
 		    { name = "slides (pdf)", path = "2012_how-to-do-a-conference-presentation-sicsa.pdf" },
@@ -629,6 +812,7 @@ local pubs = {
 	    location = "St.Andrews, Scotland",
 	    year = "2012", month = "May", day = "15",
 		venue = "Department of Computer Science",
+        notes = "I will present my research and give an overview of the state-of-the-art in this field.",
         files = {
 		    { name = "slides (open office)", path = "2012_machinelearningcompilersandmobile.odp" },
 		    { name = "slides (pdf)", path = "2012_machinelearningcompilersandmobile.pdf" },
@@ -636,25 +820,41 @@ local pubs = {
     },
 	{
         type = "talk",
-        title = "Machine Learning, Compilers and Mobile",
+        title = "Automatic Feature Generation for Machine Learning in Compilers",
 	    location = "Manchester, Scotland",
 	    year = "2012", month = "February", day = "29",
 		venue = "Department of Computer Science",
+        notes = "I have been invited to present my PhD research.",
         files = {
 		    { name = "slides (open office)", path = "2012_machinelearningcompilersandmobile.odp" },
 		    { name = "slides (pdf)", path = "2012_machinelearningcompilersandmobile.pdf" },
         }
     },
+    {
+        type = "talk",
+        title = "Optimising the Mobile Net",
+        location = "Staines, England",
+        year = "2011", month = "May", day = "17",
+        venue = "Samsung"
+    },    
 	{
         type = "talk",
         title = "How to Give a Research Presentation",
 	    location = "Firbush, Scotland",
 	    year = "2011", month = "October", day = "21",
 		venue = "PhD Induction 2011",
+        notes = "I was asked to give a talk about how to do conference presentations.",
         files = {
 		    { name = "slides (open office)", path = "2011_how-to-do-a-conference-presentation-sicsa.odp" },
 		    { name = "slides (pdf)", path = "2011_how-to-do-a-conference-presentation-sicsa.pdf" },
         }
+    },
+    {
+        type = "talk",
+        title = "Collaborative Machine Learning Compiler and OS Optimisation for Android Devices",
+        location = "Cambridge, England",
+        year = "2011", month = "May", day = "31",
+        venue = "ARM Ltd"
     },
 	{
         type = "talk",
@@ -662,6 +862,7 @@ local pubs = {
 	    location = "Edinburgh, Scotland",
 	    year = "2011", month = "May", day = "24",
 		venue = "SICSA Conference 2011",
+        notes = "I was asked to give a talk about how to do conference presentations.  The seminar was the highest rated talk at the conference and, as a result, I have been asked to repeat the talk at this year's conference.",
         files = {
 		    { name = "slides (open office)", path = "2011_how-to-do-a-conference-presentation-sicsa.odp" },
 		    { name = "slides (pdf)", path = "2011_how-to-do-a-conference-presentation-sicsa.pdf" },
@@ -669,20 +870,22 @@ local pubs = {
     },
 	{
         type = "talk",
-        title = "Machine Learning in Compilers",
+        title = "Machine Learning in Compilers for Parallelisation",
 	    location = "Austin, Texas, USA",
 	    year = "2009", month = "May", day = "27",
 		venue = "ACES, University of Texas",
+        notes = "Presented to Keshav Pingali's group which produces the Galois parallel system.",
         files = {
 		    { name = "slides (open office)", path = "2009_mlincompilers_riceandut.odp" },
         }
     },
 	{
         type = "talk",
-        title = "Machine Learning in Compilers",
+        title = "Optimising Compilation with Machine Learning",
 	    location = "Houston, Texas, USA",
 	    year = "2009", month = "May", day = "26",
 		venue = "Rice University",
+        notes = "Keith Cooper asked me to present a lecture to his group, explaining the state of the art in machine learning for compilers.",
         files = {        
 		    { name = "slides (open office)", path = "2009_mlincompilers_riceandut.odp" },
         }
@@ -693,9 +896,24 @@ local pubs = {
 	    location = "Mountain View, California, USA",
 	    year = "2009", month = "May", day = "21",
 		venue = "Google Technical Talks",
+        notes = "Google invited me to present an overview of machine learning in compilers. I was asked to show the cutting edge and give particular emphasis to the developments at Edinburgh.",
         files = {
 		    { name = "slides (open office)", path = "2009_mlincompilers_google.odp" },
         }
+    },
+    { 
+        type = "talk",
+        title = "Efficient Selection of Competing Compiler Optimizations",
+        location = "Dublin, Ireland",
+        year = "2009", month = "June", day = "19",
+        venue = "Trinity College Dublin"
+    },
+    {
+        type = "talk",
+        title = "Automatic Feature Generation for Setting Compiler Heuristics",
+	    location = "Goteborg, Sweden",
+	    year = "2008", month = "January", day = "27",
+		venue = "University of Gothenburg",
     },
 	{
         type = "talk",
@@ -703,9 +921,42 @@ local pubs = {
 	    location = "Seoul, S. Korea",
 	    year = "2008", month = "June", day = "16-17",
 		venue = "Korea-EU Cooperation Forum on ICT",
+        notes = "I was invited by the European Commission, DG INFSO of Embedded Systems, to present our research at a conference aimed at cementing collaboration opportunities between the EU and Korea.  I was asked because the EU felt that ours was an example of outstanding work.",
         files = {
 		    { name = "slides (pdf)", path = "2008_ict_seoul.pdf" },
         }
     },
+    {   
+        type = "talk",
+        title = "Machine Learning for Configurable Processors",
+        location = "St. Albans, UK",
+        year = "2008",
+        venue = "ARC International",
+        notes = "I gave a talk demonstrating how machine learning could be used to improve the company's compilers  which targeted configurable processors.  The talk explained the basics of ML techniques with particular reference to work that combined architectural and code features.",
+    }, 
+    {   
+        type = "talk",
+        title = "Extensibility for GCC",
+        location = "Paris, France",
+        year = "2007",
+        venue = "INRIA",
+        notes = "I was asked to give a presentation on my work making GCC extensible.  Making the compiler extensible means allowing heuristics to be driven from the outside and is essential for performing machine learning tasks without hacking the compiler.",
+    }, 
+    {   
+        type = "talk",
+        title = "libPlugin: a Plugin Library for GCC",
+        location = "Haifa, Israel",
+        year = "2007",
+        venue = "IBM Research",
+        notes = "I presented my tool chain, libPlugin, which provides an elegant plug-in framework for the GCC compiler.    This presentation was given to members of the compiler team in IBM research.",
+    }, 
+    {   
+        type = "talk",
+        title = "Scripting Compilers",
+        location = "Rennes, France",
+        year = "2006",
+        venue = "CAPS Enterprise",
+        notes = "This company was beginning to look at machine learning experiments in GCC.  During a week long visit to help solve this problem, I also gave a talk on how scripting languages can enable iterative compilation by making the compiler extensible.  As a result of this the company began using my ECMA Scripting extensions for GCC.",
+    }, 
 }
 return pubs

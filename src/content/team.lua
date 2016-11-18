@@ -71,7 +71,16 @@ local team = {
         type = "Post Doc - Finished 2016",
         subject = "Vertical Data Centre Integration",
         now = "Associate Professor"
-    }
+    },
+    
+    rrocha = {
+        forename = "Rodrigo",
+        surname = "Caetano Rocha",
+        web = "http://rcor.me/",
+        photo = "rrocha.png",
+        subject = "Auto paralellisation",
+        type = "PhD Student"
+    },
     
 }
 for k,v in pairs( team ) do

@@ -32,24 +32,25 @@ html
         include /sections.pug
         
         .content
-            .container
-                .expander
-                    a.expander-trigger.expander-hidden(href="javascript:void(0)") Expenses
-                    .expander-content
-                        p.
-                            Students often ask me when they go on conferences what types of things they should put through on their expense
-                            claims. I tell them there are some guidelines from the University, but that they should act as if their claims
-                            were going to be published. If it wouldn't embarrass them under those circumstances, then go ahead and claim,
-                            the finance department can always say "No."
-                        p.
-                            I've told students this for a while, then realised that I don't exactly practice what I preach. So, here are 
-                            mine. I may occasionally forget to upload a batch, but they will arrive eventually.
+            if false
+                .container
+                    .expander
+                        a.expander-trigger.expander-hidden(href="javascript:void(0)") Expenses
+                        .expander-content
+                            p.
+                                Students often ask me when they go on conferences what types of things they should put through on their
+                                expense claims. I tell them there are some guidelines from the University, but that they should act as if
+                                their claims were going to be published. If it wouldn't embarrass them under those circumstances, then go
+                                ahead and claim, the finance department can always say "No."
+                            p.
+                                I've told students this for a while, then realised that I don't exactly practice what I preach. So, here
+                                are mine. I may occasionally forget to upload a batch, but they will arrive eventually.
                         
-                        include /joined-expenses.html
+                            include /joined-expenses.html
                         
-                        p. 
-                            Please note that all expenses submitted before 1 July 2016 I copied over manually into this new system. Quite
-                            possibly that may have introduced some errors.
+                            p. 
+                                Please note that all expenses submitted before 1 July 2016 I copied over manually into this new system.
+                                Quite possibly that may have introduced some errors.
             .container
         
                 p.
